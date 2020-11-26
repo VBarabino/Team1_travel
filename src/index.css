@@ -211,4 +211,9 @@ form .form-header input[type="submit"]:hover{
   border-radius: 10px 10px 10px 10px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
+.lista1{
+  font-size: 13px;
+  list-style: none;
+  font-weight: 500;
+}
 
