@@ -3,6 +3,7 @@ import './App.css';
 import './index.css';
 import LoginForm from './Components/LoginForm';
 import HeaderSito from './Components/HeaderSito'
+import AgencyDesc from './Components/AgencyDesc'
 import DataContextProvider from './Context/DataContext';
 
 
@@ -42,59 +43,33 @@ function App() {
     
   }
   
-  // const [datiJson , setDatiJson] = useState ({})
-
-  // useEffect(() => {
-  //   const getDati = async() =>{
-  //     const dati = await fetch(api).then(res => res.json())
-  //     // return setDatiJson(dati.results.data)
-  //     return console.log(dati.results.data)
-  //   }
-  //   getDati()
-  // }, [api])
- 
-  // fetch(api)
-  // .then(response => response.json())
-  // .then(data => console.log(data));
-  
-
-// const getData = () => {
-//     fetch(api)
-//       .then(res => res.json())
-//       .then(res => {
-//         console.log(res)
-//         return getData()
-//       })
-//       .catch(err => {})
-//   }
-
-
-// const fetchingData = async () =>{
-//   const res = await fetch(api)
-//   const data = await res.json()
-//   return data
-//   }
-  
-//   fetchingData()
-//   .then( data => console.log(data))
-//   .catch(error => console.log(error))
-
-
   return (
     <>
     <DataContextProvider>
-    <div className="App">
     
+    <div>
     {(user.email != "") ? (
+     
       <div className="logged">
-        <h2>Welcome,{user.name}</h2>
-        <button onClick={logout}>Logout</button>
-         <HeaderSito /> 
-      </div>
+        <div className ="topbar">
+          <h2 className="welcome">Benvenuto,{user.name}</h2>
+          <button onClick={logout} className="logout btn btn-primary">Logout</button>
+        </div>
+        
+         <HeaderSito username={user.name}/> 
+         <AgencyDesc />
+         {/* COMPONENTI QUI */}
+         </div>
+         
+         
+      
     ) : (
+      <div className="App">
       <LoginForm Login={login} Error={error}/>
+      </div>
     )}
     </div>
+    
     </DataContextProvider>
 
     </>
