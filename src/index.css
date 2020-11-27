@@ -51,7 +51,7 @@ form::after{
 form .form-header{
   position: relative;
   display: block;
-  background-color: antiquewhite;
+  background-color: rgb(255, 255, 255);
   padding: 30px;
   z-index: 2;
 }
@@ -87,7 +87,7 @@ form .form-header .form-group input {
   display: block;
   width: 100%;
   padding: 10px 15px;
-  background-color: antiquewhite;
+  background-color: rgb(255, 250, 244);
   border-radius: 8px;
   transition: 0.4s;
 
@@ -104,7 +104,7 @@ form .form-header input[type="submit"]{
   background-size: 200%;
   background-position: 0%;
   transition: 0.4s;
-  color: antiquewhite;
+  color: rgb(255, 251, 246);
   font-weight: 700;
   cursor: pointer;
 }

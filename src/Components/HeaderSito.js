@@ -13,14 +13,14 @@ function HeaderSito(prop) {
         <div>
             {console.log(datiJson)}
             
-            <div style={{backgroundImage: `url(${Background})`}} className="bgtop">
-            <img className="logo" key={datiJson.datiJson.agency.image} src={datiJson.datiJson.agency.image} className="logo"/>
+           {/* <div style={{backgroundImage: `url(${Background})`}} className="bgtop">
+            <img className="logo" src={datiJson.agency.image} className="logo"/> 
             <div className="headertext text-right">
                 <p className="per">per {prop.username}</p>
-                    <h1 key={datiJson.datiJson.title} className="titolo">{datiJson.datiJson.title}</h1>
+                    <h1 className="titolo">{datiJson.title}</h1>
                 <button className="btn btn-primary">Scopri di più</button>
             </div>
-            </div>
+        </div> */}
         </div>
     )
 }

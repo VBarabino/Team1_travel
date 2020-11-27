@@ -1,10 +1,12 @@
 import React, { useState , createContext , useEffect} from 'react'
+import Spinner from '../Components/Spinner'
 
 export const DataContext = createContext()
 
 const DataContextProvider = (props) => {
 
     const [datiJson , setDatiJson] = useState ({})
+    const [isLoading,setIsLoading] = useState(true)
 
     const api='http://51.77.82.133:86/api/quotations/QUO_5fb3acb3a0f18'
 
@@ -12,17 +14,52 @@ const DataContextProvider = (props) => {
       const getDati = async() =>{
         const res = await fetch(api)
         const data = await res.json()
-        return setDatiJson(data.results.data)
-       
+        return setDatiJson(data.results.data),
+        setIsLoading(false)
+        
       }
       getDati()
-    }, [api])
-   
+    },[])
+
+
+
+
+  //   const  getDati = async () => {
+  //     setIsLoading(true)
+  //     const res = await fetch(api);
+  //     const data = await res.json();
+  //     console.log('ciao')
+  //     console.log(data)
+  //     setDatiJson(data)
+  //     setIsLoading(false)
+  // }
+  //     useEffect( () => {
+  //         getDati()
+  //     },[api])
+      
+
+
+   const gif ="https://media2.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif"
   
     return (
-      <DataContext.Provider value={{datiJson}}>
+      
+      (isLoading) ? (
+        <Spinner style={{
+            width:'40%',
+            margin:'50px auto',
+            textAlign:'center',
+            padding:40,
+        }}>
+            <h2>Loading ...</h2>
+            <img src={gif}/>
+        </Spinner>
+    ):(
+      
+      <DataContext.Provider value={datiJson}>
           {props.children}
       </DataContext.Provider>
+    )
+  
     )
   }
   export default DataContextProvider

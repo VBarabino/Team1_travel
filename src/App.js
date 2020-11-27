@@ -45,11 +45,11 @@ function App() {
   
   return (
     <>
-    <DataContextProvider>
+    
     
     <div>
     {(user.email != "") ? (
-     
+     <DataContextProvider>
       <div className="logged">
         <div className ="topbar">
           <h2 className="welcome">Benvenuto,{user.name}</h2>
@@ -57,9 +57,12 @@ function App() {
         </div>
         
          <HeaderSito username={user.name}/> 
-         <AgencyDesc />
+         {/* <AgencyDesc /> */}
          {/* COMPONENTI QUI */}
+        
          </div>
+         </DataContextProvider>
+         
          
          
       
@@ -70,7 +73,6 @@ function App() {
     )}
     </div>
     
-    </DataContextProvider>
 
     </>
   );
