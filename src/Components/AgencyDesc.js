@@ -8,34 +8,36 @@ function AgencyDesc() {
     return (
         <div className="container">
         <div className="card">
-        <div className="row">
-            <div className="col-2">
-        <img src={datiJson.datiJson.operator.image} style={{width:200,height:200,marginTop:70,marginLeft:20}}/>
-        </div>
-        <div className="col">
+            <div className="row">
+                <div className="col-lg-4 col-md-12">
+                <img src={datiJson.operator.image} style={{width:238}}/>
+            </div>
+            <div className="col-lg-3 col-md-12">
+                <ul>
+                    <li style={{listStyle:'none'}}><h3>{datiJson.operator.name}</h3></li>
+                   
+                    <p className="lista1" style={{listStyle:'inside'}}> Il tuo agente di viaggio</p>
+                    <li className="lista1" href='#'><i className="fas fa-phone"></i> {datiJson.operator.contact.phone}</li>
+                    <li className="lista1"><i className="fas fa-envelope"></i> {datiJson.operator.contact.email}</li>
+                </ul>
+            </div>
         
-        <ul style={{marginLeft:60,marginTop:70}}>
-            <li style={{listStyle:'none'}}><h3>{datiJson.datiJson.operator.name}</h3></li>
-            <p className="lista1" style={{listStyle:'inside'}}>Il tuo agente di viaggio</p>
-            <li className="lista1" href='#'><i className="fas fa-phone"></i>{datiJson.datiJson.operator.contact.phone}</li>
-            <br />
-            <li className="lista1"><i className="fas fa-envelope"></i>{datiJson.datiJson.operator.contact.email}</li>
-            <li className="lista1"><i className="fas fa-home"></i></li>
-        </ul>
+            <div className="col-lg-5 col-md-12 pdl">
+                <img src={datiJson.agency.image} style={{width:100, marginBottom:5}} />
+                <br/>
+                <p className="lista1">Insolita Travels | Sicily DMC &amp; Travel Agency<br/> (Licence nr. 2226/s2-Turl)<br/>
+                    Viale della Gioventù, 26 A - 95014 Giarre (Catania)<br/>
+                    www.insicilia.it
+                </p>
+               {/*  <ul style={{marginTop:5}}>
+                    <li className="lista1">- Insolita Travels di InSicilia snc: Tour Operator Sicilia, DMC e Agenzia di Viaggi;</li>
+                    <li className="lista1">- Licenza Agenzia Viaggio nr. 2226/S2-TUR della Regione Siciliana;</li>
+                    <li className="lista1">- Polizza R.C. nr. 45130310-RC14 Europaische Reiserversicherung AG;</li>
+                    <li className="lista1">- InSicilia snc è iscritta all'Ufficio Registro Imprese di Catania N. REA 260386;</li>
+                    <li className="lista1">- Fondo Garanzia Viaggi: Certificato n. A/286.1059/1/R;</li>
+                </ul> */}
+            </div>
         </div>
-        <hc/>
-        <div className="col">
-        <img src={datiJson.datiJson.agency.image} style={{width:100,marginTop:70}} />
-        <ul style={{marginTop:10}}>
-            <li className="lista1">- Insolita Travels di InSicilia snc: Tour Operator Sicilia, DMC e Agenzia di Viaggi;</li>
-            <li className="lista1">- Licenza Agenzia Viaggio nr. 2226/S2-TUR della Regione Siciliana;</li>
-            <li className="lista1">- Polizza R.C. nr. 45130310-RC14 Europaische Reiserversicherung AG;</li>
-            <li className="lista1">- InSicilia snc è iscritta all'Ufficio Registro Imprese di Catania N. REA 260386;</li>
-            <li className="lista1">- Fondo Garanzia Viaggi: Certificato n. A/286.1059/1/R;</li>
-        </ul>
-        </div>
-        </div>
-        
     </div>
     </div>
     )

@@ -1,11 +1,13 @@
-import React,{ useState , useEffect } from 'react'
+import React,{ useState , useEffect, useContext } from 'react'
 import './App.css';
 import './index.css';
 import LoginForm from './Components/LoginForm';
 import HeaderSito from './Components/HeaderSito'
 import AgencyDesc from './Components/AgencyDesc'
-import DataContextProvider from './Context/DataContext';
-
+import Footer from './Components/Footer'
+import DataContextProvider, { DataContext } from './Context/DataContext';
+import Dropdownblue from './Components/DropdownBlue'
+import DropdownFather from './Components/DropdownFather'
 
 
 
@@ -18,6 +20,7 @@ function App() {
   }
   const [ user , setUser ] = useState({name:"",email:""})
   const [ error , setError ] = useState("")
+
  
 
   const login = details => {
@@ -50,6 +53,7 @@ function App() {
     <div>
     {(user.email != "") ? (
      <DataContextProvider>
+       
       <div className="logged">
         <div className ="topbar">
           <h2 className="welcome">Benvenuto,{user.name}</h2>
@@ -57,10 +61,13 @@ function App() {
         </div>
         
          <HeaderSito username={user.name}/> 
-         {/* <AgencyDesc /> */}
+         <AgencyDesc />
+         <DropdownFather />
+         <Footer/>
          {/* COMPONENTI QUI */}
         
          </div>
+
          </DataContextProvider>
          
          

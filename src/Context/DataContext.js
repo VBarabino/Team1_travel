@@ -14,29 +14,13 @@ const DataContextProvider = (props) => {
       const getDati = async() =>{
         const res = await fetch(api)
         const data = await res.json()
-        return setDatiJson(data.results.data),
+        .then (data => setDatiJson(data.results.data) )
+        .catch(error => alert(error='error loading the API'))
         setIsLoading(false)
-        
       }
       getDati()
     },[])
 
-
-
-
-  //   const  getDati = async () => {
-  //     setIsLoading(true)
-  //     const res = await fetch(api);
-  //     const data = await res.json();
-  //     console.log('ciao')
-  //     console.log(data)
-  //     setDatiJson(data)
-  //     setIsLoading(false)
-  // }
-  //     useEffect( () => {
-  //         getDati()
-  //     },[api])
-      
 
 
    const gif ="https://media2.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif"

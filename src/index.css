@@ -11,6 +11,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+ul {
+  list-style: none;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -120,25 +124,6 @@ form .form-header input[type="submit"]:hover{
 
 
 
-.welcome{
-  /*display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: right;*/
- 
-}
-.logout{
-  /*display:flex;
-  border: 1px solid;
-  border-radius: 10%;
-  position: relative;
-  left: 730px;
-  align-items: right;
-  justify-content: right;
-  */
-}
-
-
 .titolo{
   color: #000000;
   
@@ -160,7 +145,7 @@ form .form-header input[type="submit"]:hover{
   text-align:right;
   position:absolute;
   width:100%;
-  padding:1em;
+  padding:1em 5%;
   z-index:10;
 }
 .topbar h2 {
@@ -171,8 +156,8 @@ form .form-header input[type="submit"]:hover{
 .logo{
   width: 160px;
   position: absolute;
-  top:10px;
-  left:30px;
+  top:15px;
+  left:5%;
   background-color:#FFF;
   padding:1em;
 }
@@ -210,6 +195,8 @@ form .form-header input[type="submit"]:hover{
 .card {
   border-radius: 10px 10px 10px 10px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  margin-top:2em;
+  padding:2em; 
 }
 .lista1{
   font-size: 13px;
@@ -217,3 +204,64 @@ form .form-header input[type="submit"]:hover{
   font-weight: 500;
 }
 
+.pdl {
+  padding-left:30px;
+}
+
+footer{
+  background-color: #3482D4;
+  padding: 20px 0px;
+  color:white;
+}
+
+.white-button{
+  padding:5px;
+  background-color: white;
+  color:#3482D4;
+  border:2px solid white;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s;
+  font-weight: 700;
+  font-size: 0.750rem;
+}
+
+.white-button:hover{
+  background-color: transparent;
+  color:white;
+  border:2px solid white;
+}
+
+.logo-footer{
+  height:75px;
+  width:auto;
+}
+
+
+
+
+
+
+
+
+.dropdown-wrapper{
+  display: flex;
+  min-height: 38px;
+  flex-wrap: wrap;
+}
+
+.dropdown-header{
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.dropdown-header-title2{
+  text-transform: uppercase;
+  color: blue;
+  font-size: 20px;
+  font-weight: 600;
+}
