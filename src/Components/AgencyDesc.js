@@ -8,24 +8,24 @@ function AgencyDesc() {
     return (
         <div className="container">
         <div className="card">
-            <div className="row">
-                <div className="col-lg-4 col-md-12">
+            <div className="row d-flex">
+                <div className="col-lg-4 col-md-12 align-self-end">
                 <img src={datiJson.operator.image} style={{width:238}}/>
             </div>
-            <div className="col-lg-3 col-md-12">
-                <ul>
-                    <li style={{listStyle:'none'}}><h3>{datiJson.operator.name}</h3></li>
+            <div className="col-lg-4 col-md-12 align-self-end">
+                <ul style={{marginBottom:0}}>
+                    <li style={{listStyle:'none'}}><h3 className="agent">{datiJson.operator.name}</h3></li>
                    
-                    <p className="lista1" style={{listStyle:'inside'}}> Il tuo agente di viaggio</p>
-                    <li className="lista1" href='#'><i className="fas fa-phone"></i> {datiJson.operator.contact.phone}</li>
-                    <li className="lista1"><i className="fas fa-envelope"></i> {datiJson.operator.contact.email}</li>
+                    <p className="lista1" style={{listStyle:'inside', marginBottom:20}}> Il tuo agente di viaggio</p>
+                    <li className="lista1"><i className="fas fa-phone"></i><a href="tel:095931367"> {datiJson.operator.contact.phone}</a></li>
+                    <li className="lista1"><i className="fas fa-envelope"></i><a href="mailto:info@insicilia.it"> {datiJson.operator.contact.email}</a></li>
                 </ul>
             </div>
         
-            <div className="col-lg-5 col-md-12 pdl">
+            <div className="col-lg-4 col-md-12 align-self-end pdl">
                 <img src={datiJson.agency.image} style={{width:100, marginBottom:5}} />
                 <br/>
-                <p className="lista1">Insolita Travels | Sicily DMC &amp; Travel Agency<br/> (Licence nr. 2226/s2-Turl)<br/>
+                <p style={{marginBottom:0}} className="lista1">Insolita Travels | Sicily DMC &amp; Travel Agency<br/> (Licence nr. 2226/s2-Turl)<br/>
                     Viale della Gioventù, 26 A - 95014 Giarre (Catania)<br/>
                     www.insicilia.it
                 </p>

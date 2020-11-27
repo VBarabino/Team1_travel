@@ -15,6 +15,8 @@ ul {
   list-style: none;
 }
 
+a { text-decoration: none!important;}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -151,6 +153,7 @@ form .form-header input[type="submit"]:hover{
 .topbar h2 {
   color: #FFF;
   font-size: 1em;
+  text-shadow: 1px 1px 3px #333;
 }
 
 .logo{
@@ -209,6 +212,7 @@ form .form-header input[type="submit"]:hover{
 }
 
 footer{
+  margin-top:100px;
   background-color: #3482D4;
   padding: 20px 0px;
   color:white;
@@ -264,4 +268,9 @@ footer{
   color: blue;
   font-size: 20px;
   font-weight: 600;
+}
+
+@media only screen and (max-width : 991px) {
+  .pdl {padding-left:15px; margin-top:15px;}
+  .agent { margin-top:10px;}
 }

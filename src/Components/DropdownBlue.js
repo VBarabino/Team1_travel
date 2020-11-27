@@ -3,7 +3,6 @@ import  {DataContext} from '../Context/DataContext'
 import '../index.css'
 
 const DropdownBlue = ({ title , item }) => {
-    // $('.dropdown-toggle').dropdown()
     const [open,setOpen] = useState(false)
     const toggle = () => setOpen(!open)
 
@@ -18,7 +17,7 @@ const DropdownBlue = ({ title , item }) => {
 
                 </div>
                 <div className="dropdown-header-action">
-                    <p>{open ? <i className="fas fa-chevron-down"></i> : <i className="fas fa-chevron-up"></i>}</p>
+                    <p>{open ?  <i className="fas fa-chevron-up"></i> : <i className="fas fa-chevron-down"></i>}</p>
 
                 </div>
 

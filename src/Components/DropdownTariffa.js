@@ -1,6 +1,6 @@
 import React,{ useState } from 'react'
 
-const DropdownTariffa = ({ title ,totalprice ,  partecipanti , included , notincluded}) => {
+const DropdownTariffa = ({ title , totalprice ,  partecipanti , included , notincluded}) => {
     const [open,setOpen] = useState(false)
     const toggle = () => setOpen(!open)
 
@@ -15,7 +15,7 @@ const DropdownTariffa = ({ title ,totalprice ,  partecipanti , included , notinc
 
                 </div>
                 <div className="dropdown-header-action">
-                    <p>{open ? <i className="fas fa-chevron-down"></i> : <i className="fas fa-chevron-up"></i>}</p>
+                    <p>{open ? <i className="fas fa-chevron-up"></i> : <i className="fas fa-chevron-down"></i>}</p>
 
                 </div>
 

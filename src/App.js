@@ -61,10 +61,11 @@ function App() {
         </div>
         
          <HeaderSito username={user.name}/> 
+         {/* MAPPA QUI */}
          <AgencyDesc />
          <DropdownFather />
          <Footer/>
-         {/* COMPONENTI QUI */}
+         
         
          </div>
 
