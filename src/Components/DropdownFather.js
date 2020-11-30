@@ -8,20 +8,64 @@ const DropdownFather = () => {
 
     const datiJson = useContext(DataContext)
 
+    const arr=[]
+
+    let i=0;
+
+    // for(i; i<=datiJson.rows.length ; i++){
+    //     if(datiJson.rows[i].places[0].name !== datiJson.rows[i+1].places[0].name){
+    //         arr.concat(datiJson.rows[i+1])
+    //     }else{
+    //         arr.push(datiJson.rows[i])
+    //         arr.concat(datiJson.rows[i])
+    //     }
+    // }
+
+
+
+    // for(i; i<datiJson.rows.length -1; i++){
+        
+
+    //     if(datiJson.rows[i].places[0].name !== datiJson.rows[i+1].places[0].name){
+    //         if(typeof (datiJson.rows[i+1].places[0].name) !== undefined) {
+    //         arr.push(datiJson.rows[i])
+    //     }
+    // }else{
+    //     arr.push(datiJson.rows[6])
+    //     arr.pop(arr[4])
+    // }}
+  
+
+
+    
+        for (let i = 0; i < datiJson.rows.length; i++) {
+            if((i+1) < datiJson.rows.length) { 
+                if(datiJson.rows[i].places[0].name != datiJson.rows[i+1].places[0].name){ 
+                    
+                    arr.push(datiJson.rows[i])
+                } else{
+                    arr.concat(datiJson.rows[i])
+
+                }
+            }    
+            else {
+                arr.push(datiJson.rows[i])
+            }
+        }
+        console.log(arr) 
+
+    
+
     return (
         <div className="container">
             <ul>
+               
 
-            {/* <li><Dropdown title={datiJson.rows[0].places[0].name} data="20 - 21 NOVEMBRE" title2={datiJson.rows[0].days[0].name} data2={datiJson.rows[0].dayDate} image={datiJson.rows[0].days[0].images[0].image} desc={datiJson.rows[0].days[0].description} patente={datiJson.rows[0].transports[0].name}/> </li> */}
-            {datiJson.rows.map((el,i) =>{
-            
-                return <li key={i}> <DropdownDays title={el.places[0].name}/> </li> 
-                
-                // return console.log(el)
-                
-
-            } )}
-            
+                {arr.map(el=>{
+                    return <li><DropdownDays title={el.places[0].name} /></li>
+                })}
+        
+                      
             <li><Dropdowntariffa title="Tariffe" totalprice={datiJson.priceTotal} partecipanti={datiJson.partecipants} included={datiJson.included} notincluded={datiJson.notIncluded}/></li>
             
             <li><Dropdownblue title={datiJson.documentsRequested.name} item={datiJson.documentsRequested.description}/></li>

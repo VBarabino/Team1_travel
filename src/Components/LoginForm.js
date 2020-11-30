@@ -1,4 +1,5 @@
 import React,{ useState } from 'react'
+import { Redirect } from 'react-router-dom'
 import '../index.css'
 
 const LoginForm = ({ Login , Error }) => {
@@ -7,8 +8,12 @@ const LoginForm = ({ Login , Error }) => {
 
     const handleSubmit = e => {
         e.preventDefault()
+        
 
         Login(details)
+        return(
+         <Redirect to="/home" />
+        )
     }
     return (
         <form onSubmit={handleSubmit}>

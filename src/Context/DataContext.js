@@ -5,7 +5,7 @@ export const DataContext = createContext()
 
 const DataContextProvider = (props) => {
 
-    const [datiJson , setDatiJson] = useState ({})
+    const [datiJson , setDatiJson] = useState ([])
     const [isLoading,setIsLoading] = useState(true)
 
     const api='http://51.77.82.133:86/api/quotations/QUO_5fb3acb3a0f18'

@@ -10,7 +10,7 @@ const DropdownDays = ({title}) => {
             <div className="dropdown-header" role="button" onClick={() => toggle(!open)}>
                 <div className="dropdown-header-title">
                     <p className="dropdown-header-title2" style={{color:'#333333'}}>
-                      {title}  
+                      {title} 
                       
                     </p>
 
