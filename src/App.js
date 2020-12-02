@@ -1,125 +1,126 @@
-import React,{ useState } from 'react'
-import './App.css';
-import './index.css';
+import React, { useEffect , useState} from 'react'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Redirect
+  } from "react-router-dom";
+import DataContextProvider from './Context/DataContext';
+import Cookies from 'js-cookie'
 import LoginForm from './Components/LoginForm';
 import HeaderSito from './Components/HeaderSito'
 import AgencyDesc from './Components/AgencyDesc'
 import Footer from './Components/Footer'
-import DataContextProvider from './Context/DataContext';
 import DropdownFather from './Components/DropdownFather'
-import Map from './Components/Map'
-import { BrowserRouter as Router , Switch , Route , Link, Redirect } from 'react-router-dom'
 
+//import AuthApi from "./Component/AuthApi"
+import AuthApi from './Components/AuthApi'
+export default function App3() {
+    const [auth,setAuth] = React.useState(false);
 
-
-
-
-function App() {
-  const adminUser = {
-    email:"team1@team1.com",
-    password:"team1"
-  }
-  const [ user , setUser ] = useState({name:"",email:""})
-  const [ error , setError ] = useState("")
-
- 
-
-  const login = details => {
-    
-    if(details.email === adminUser.email && details.password === adminUser.password){
-      setUser({
-        name:details.name,
-        email:details.email,
-        password:details.password
-      })
-    }else{
-      setError("E-mail o password errata")
+    const readCookie=()=>{
+        const user = Cookies.get("user");
+        if(user){
+            setAuth(true);
+        }
     }
+    React.useEffect(() => {
+        readCookie();
+    }, [])
+    return (
+        <div>
+            <AuthApi.Provider value={{auth,setAuth}}>
+            <Router>
+                <Routes/>
+            </Router>
+            </AuthApi.Provider>
+        </div>
+    )
+}
 
-  }
+const Login = () => {
+    const [ error , setError ] = useState("")
+    const adminUser = {
+        email:"team1@team1.com",
+        password:"team1"
+      }
+    const Auth = React.useContext(AuthApi)
+    const handleOnClick = (details) =>{
+        if(details.email === adminUser.email && details.password === adminUser.password){Auth.setAuth(true);}else{setError("E-mail o password errata")}
+        
+        Cookies.set("user","loginTrue")
+    }
+    return(
+        <div className="App">
+    <LoginForm Login={handleOnClick} Error={error}/> 
+    {/* Error={error}/> */}
+  </div>
+    )
+}
 
-  const logout = () =>{
-          
-    setUser({
-      name:"",
-      email:""
-    })
-
+const Dashboard = () => {
+    const Auth = React.useContext(AuthApi)
+    const handleOnClick = () =>{
+        Auth.setAuth(false);
+        Cookies.remove("user");
+    }
     return(
         <>
-         <Redirect to="/login" />
-        </>
-    )
-   
-
-    
-  }
-
-
-  const Form = () =>{
-      return(
-    
-            <div className="App">
-              <LoginForm Login={login} Error={error}/>
-            </div>
-    )
-
-
-  }
-
-
-  const Home = () =>{
-      return(
-        <>
+        <DataContextProvider>
         <div className="logged">
         <div className ="topbar">
-          <h2 className="welcome">Benvenuto,{user.name}</h2>
-          <button onClick={logout} className="logout btn btn-primary">Logout</button>
+          <h2 className="welcome">Benvenuto,</h2>
+          <button onClick={handleOnClick} className="logout btn btn-primary">Logout</button>
         </div>
-         <HeaderSito username={user.name}/> 
+         <HeaderSito />
          {/* MAPPA QUI */}
-         {/* <Map /> */}
          <AgencyDesc />
          <DropdownFather />
          <Footer/>
          </div>
+         </DataContextProvider>
          </>
-         
-         )
-
-
-  }
-
-  
-  return (
-   <>
-    <Router>
     
-      <Switch>
-        {user.email != "" ? (
-                <DataContextProvider>
-                   <Redirect to="/home" />
-                   <Route exact path="/home" component={Home}  />
-                </DataContextProvider>
-            )
-                : (
-                  <>
-                    <Redirect to="/login" />
-                    <Route exact path="/login" component={Form} />
-                  </>
-            )}
-          
-      </Switch>
-          
-    
-     
-    </Router>
-    </>
-
-    
-
- 
-  );
+    )
 }
 
-export default App;
+const Routes = () =>{
+    const Auth = React.useContext(AuthApi)
+    return (
+        <Switch>
+            <ProtectedLogin path="/Login" component={Login} auth={Auth.auth}/>
+            <ProtectedRoute path="/Dashboard" auth={Auth.auth} component={Dashboard}/>
+        </Switch>
+    )
+}
+
+const ProtectedRoute =({auth, component: Component, ...rest}) =>{
+    return (
+        <Route 
+            {...rest}
+            render ={()=>auth? ( 
+            <Component/>
+            ):(
+                <Redirect to ="/login"/>
+            )}
+        />
+
+        
+    )
+}
+
+const ProtectedLogin =({auth, component: Component, ...rest}) =>{
+    return (
+        <Route 
+            {...rest}
+            render ={()=> !auth? ( 
+            <Component/>
+            ):(
+                <Redirect to ="/dashboard"/>
+            )}
+        />
+
+        
+    )
+}
+
