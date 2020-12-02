@@ -7,6 +7,7 @@ import AgencyDesc from './Components/AgencyDesc'
 import Footer from './Components/Footer'
 import DataContextProvider from './Context/DataContext';
 import DropdownFather from './Components/DropdownFather'
+import Map from './Components/Map'
 import { BrowserRouter as Router , Switch , Route , Link, Redirect } from 'react-router-dom'
 
 
@@ -77,6 +78,7 @@ function App() {
         </div>
          <HeaderSito username={user.name}/> 
          {/* MAPPA QUI */}
+         {/* <Map /> */}
          <AgencyDesc />
          <DropdownFather />
          <Footer/>
@@ -105,8 +107,8 @@ function App() {
                     <Redirect to="/login" />
                     <Route exact path="/login" component={Form} />
                   </>
-            )
-          }
+            )}
+          
       </Switch>
           
     
