@@ -15,7 +15,7 @@ import DropdownFather from './Components/DropdownFather'
 
 //import AuthApi from "./Component/AuthApi"
 import AuthApi from './Components/AuthApi'
-export default function App3() {
+export default function App() {
     const [auth,setAuth] = React.useState(false);
 
     const readCookie=()=>{
@@ -53,7 +53,6 @@ const Login = () => {
     return(
         <div className="App">
     <LoginForm Login={handleOnClick} Error={error}/> 
-    {/* Error={error}/> */}
   </div>
     )
 }
@@ -69,7 +68,7 @@ const Dashboard = () => {
         <DataContextProvider>
         <div className="logged">
         <div className ="topbar">
-          <h2 className="welcome">Benvenuto,</h2>
+          <h2 className="welcome">Benvenuto</h2>
           <button onClick={handleOnClick} className="logout btn btn-primary">Logout</button>
         </div>
          <HeaderSito />

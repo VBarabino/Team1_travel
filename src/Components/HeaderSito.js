@@ -16,7 +16,7 @@ function HeaderSito(prop) {
            <div style={{backgroundImage: `url(${Background})`}} className="bgtop">
             <img className="logo" src={datiJson.agency.image} className="logo"/> 
             <div className="headertext text-right">
-                <p className="per">per {prop.username}</p>
+                <p className="per">per te</p>
                     <h1 className="titolo">{datiJson.title}</h1>
                 <button className="btn btn-primary">Scopri di più</button>
             </div>

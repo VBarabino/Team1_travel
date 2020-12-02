@@ -3,48 +3,24 @@ import Dropdownblue from './DropdownBlue'
 import  {DataContext} from '../Context/DataContext'
 import Dropdowntariffa from './DropdownTariffa'
 import DropdownDays from './DropdownDays'
+import Timeline from './Timeline'
 
 const DropdownFather = () => {
 
     const datiJson = useContext(DataContext)
 
-    const arr=[]
+    let arr=[]
+    let arr2=[]
 
     let i=0;
 
-    // for(i; i<=datiJson.rows.length ; i++){
-    //     if(datiJson.rows[i].places[0].name !== datiJson.rows[i+1].places[0].name){
-    //         arr.concat(datiJson.rows[i+1])
-    //     }else{
-    //         arr.push(datiJson.rows[i])
-    //         arr.concat(datiJson.rows[i])
-    //     }
-    // }
 
-
-
-    // for(i; i<datiJson.rows.length -1; i++){
-        
-
-    //     if(datiJson.rows[i].places[0].name !== datiJson.rows[i+1].places[0].name){
-    //         if(typeof (datiJson.rows[i+1].places[0].name) !== undefined) {
-    //         arr.push(datiJson.rows[i])
-    //     }
-    // }else{
-    //     arr.push(datiJson.rows[6])
-    //     arr.pop(arr[4])
-    // }}
-  
-
-
-    
         for (let i = 0; i < datiJson.rows.length; i++) {
             if((i+1) < datiJson.rows.length) { 
                 if(datiJson.rows[i].places[0].name != datiJson.rows[i+1].places[0].name){ 
-                    
                     arr.push(datiJson.rows[i])
                 } else{
-                    arr.concat(datiJson.rows[i])
+                    arr2.push(datiJson.rows[i+1])
 
                 }
             }    
@@ -54,15 +30,18 @@ const DropdownFather = () => {
         }
         console.log(arr) 
 
+      
+          
     
 
     return (
         <div className="container">
             <ul>
-               
+            
+            {console.log(arr,arr2)}
 
-                {arr.map(el=>{
-                    return <li><DropdownDays title={el.places[0].name} /></li>
+                {arr.map((el,i)=>{
+                    return <li key={el.id}><DropdownDays title={el.places[0].name} date={el.dayDate} i={i}/> </li>
                 })}
         
                       
@@ -85,3 +64,22 @@ const DropdownFather = () => {
 }
 
 export default DropdownFather
+
+
+
+// {
+//     {name: Siracura, 
+//    dettagli:{
+//         
+//         giorno:{
+//              day: 21
+//              tappa: ecc    
+//              } 
+//              giorno...
+//              
+//  }
+//{ name: 
+//
+//}
+//        
+// }

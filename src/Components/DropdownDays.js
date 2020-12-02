@@ -1,8 +1,23 @@
-import React,{useState} from 'react'
+import React,{ useState , useContext } from 'react'
+import { DataContext } from '../Context/DataContext'
+import Timeline from '../Components/Timeline'
 
-const DropdownDays = ({title}) => {
+const DropdownDays = ({title , date , i}) => {
     const [open,setOpen] = useState(false)
     const toggle = () => setOpen(!open)
+
+
+
+    const datiJson = useContext(DataContext)
+    const arrTimeline=[]
+
+
+    for(let i=0; i < datiJson.rows.length; i++){
+        if(datiJson.rows[i].id ){
+        arrTimeline.push(datiJson.rows[i].days[0].name)
+    }
+
+    }
 
 
     return (
@@ -10,7 +25,7 @@ const DropdownDays = ({title}) => {
             <div className="dropdown-header" role="button" onClick={() => toggle(!open)}>
                 <div className="dropdown-header-title">
                     <p className="dropdown-header-title2" style={{color:'#333333'}}>
-                      {title} 
+                      {title} &nbsp; {date}
                       
                     </p>
 
@@ -22,17 +37,24 @@ const DropdownDays = ({title}) => {
 
             </div>
             {open && (
-                <div>
-                {/* <p className="dropdown-list">
-                    {title} <br />
-                    {title2} {data2}
-                </p>
-                <img  src={image} alt="image"/>
-                <p>{desc}</p>
-                <i class="fas fa-car"></i>
-                {patente} */}
+                <>
+                {/* <ul>
 
-                </div>
+                {arrTimeline.map((el,i) =>{
+                    return <li key={el}><Timeline day={datiJson.rows[i].days[0].name} /></li>
+                })}
+                </ul>
+                 */}
+
+                 <Timeline day={datiJson.rows[i].days[0].name}/>
+                 
+
+                
+              
+                  
+                   
+                    
+                </>
             )}
             
         </div>
