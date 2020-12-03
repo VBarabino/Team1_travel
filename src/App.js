@@ -12,6 +12,7 @@ import HeaderSito from './Components/HeaderSito'
 import AgencyDesc from './Components/AgencyDesc'
 import Footer from './Components/Footer'
 import DropdownFather from './Components/DropdownFather'
+import Mappa from './Components/Mappa'
 
 //import AuthApi from "./Component/AuthApi"
 import AuthApi from './Components/AuthApi'
@@ -72,7 +73,7 @@ const Dashboard = () => {
           <button onClick={handleOnClick} className="logout btn btn-primary">Logout</button>
         </div>
          <HeaderSito />
-         {/* MAPPA QUI */}
+         <Mappa />
          <AgencyDesc />
          <DropdownFather />
          <Footer/>

@@ -1,50 +1,82 @@
+
 import React,{useContext} from 'react'
 import Dropdownblue from './DropdownBlue'
 import  {DataContext} from '../Context/DataContext'
 import Dropdowntariffa from './DropdownTariffa'
 import DropdownDays from './DropdownDays'
-import Timeline from './Timeline'
 
 const DropdownFather = () => {
 
     const datiJson = useContext(DataContext)
-
-    let arr=[]
-    let arr2=[]
-
-    let i=0;
-
-
-        for (let i = 0; i < datiJson.rows.length; i++) {
-            if((i+1) < datiJson.rows.length) { 
-                if(datiJson.rows[i].places[0].name != datiJson.rows[i+1].places[0].name){ 
-                    arr.push(datiJson.rows[i])
-                } else{
-                    arr2.push(datiJson.rows[i+1])
-
-                }
-            }    
+    
+    let arr = []
+ 
+    let j = 0
+    
+    function tappe() {
+        for (let i = 0; i < datiJson.rows.length; i++) {    
+            if((i+1) < datiJson.rows.length) {        
+                if((datiJson.rows[i].places[0].name) != datiJson.rows[i+1].places[0].name){ 
+                    arr.push(
+                        [
+                            [`${datiJson.rows[i].places[0].name}`, `${datiJson.rows[i].dayDate}`]    
+                        ]
+                    )  
+                    
+                }  
+            }       
             else {
-                arr.push(datiJson.rows[i])
+                arr.push(
+                    [
+                        [`${datiJson.rows[i].places[0].name}`, `${datiJson.rows[i].dayDate}`]    
+                    ]
+                )  
+               /*  arr.push(
+                    [{
+                        'name': `${datiJson.rows[i].places[0].name}`,
+                        'dated': `${datiJson.rows[i].dayDate}`
+                    }]
+                )   */
             }
         }
-        console.log(arr) 
-
-      
-          
+        return arr
+    }  
+        
+   
     
 
     return (
         <div className="container">
             <ul>
+            {tappe().map((el,j,elements) =>{ 
+               
+                 let des= []
+                 for (let i = 0; i < datiJson.rows.length; i++) {  
+                        if ((datiJson.rows[i].dayDate <= el[0][1])
+                            && (datiJson.rows[i].places[0].name == el[0][0])){
+                               if (j>0) {
+                                    if(datiJson.rows[i].dayDate > elements[j-1][0][1]){
+                                        des = des.concat(datiJson.rows[i]);
+                                    }
+                               }
+                               else { 
+                                        des = des.concat(datiJson.rows[i]); 
+                               }
+                      } 
+                    }    
+                    console.log(des)
+                  return ( 
+                    <li key={j}> <DropdownDays title={el[0][0]}
+                        desc={des} />       
+                    </li> 
+                   
+                    )
+                    
+            })
+            }
             
-            {console.log(arr,arr2)}
 
-                {arr.map((el,i)=>{
-                    return <li key={el.id}><DropdownDays title={el.places[0].name} date={el.dayDate} i={i}/> </li>
-                })}
         
-                      
             <li><Dropdowntariffa title="Tariffe" totalprice={datiJson.priceTotal} partecipanti={datiJson.partecipants} included={datiJson.included} notincluded={datiJson.notIncluded}/></li>
             
             <li><Dropdownblue title={datiJson.documentsRequested.name} item={datiJson.documentsRequested.description}/></li>
@@ -64,22 +96,3 @@ const DropdownFather = () => {
 }
 
 export default DropdownFather
-
-
-
-// {
-//     {name: Siracura, 
-//    dettagli:{
-//         
-//         giorno:{
-//              day: 21
-//              tappa: ecc    
-//              } 
-//              giorno...
-//              
-//  }
-//{ name: 
-//
-//}
-//        
-// }
