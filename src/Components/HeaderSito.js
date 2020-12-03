@@ -18,7 +18,7 @@ function HeaderSito(prop) {
             <div className="headertext text-right">
                 <p className="per">per te</p>
                     <h1 className="titolo">{datiJson.title}</h1>
-                <button className="btn btn-primary">Scopri di più</button>
+                <button style={{backgroundColor:'#FFB700',height:40,borderRadius:"10%"}} className="btn btn-primary">Scopri di più</button>
             </div>
         </div>
         </div>

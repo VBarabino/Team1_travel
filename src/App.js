@@ -70,7 +70,7 @@ const Dashboard = () => {
         <div className="logged">
         <div className ="topbar">
           <h2 className="welcome">Benvenuto</h2>
-          <button onClick={handleOnClick} className="logout btn btn-primary">Logout</button>
+          <button onClick={handleOnClick} style={{backgroundColor:'#FFB700',height:40,borderRadius:"10%"}} className="logout btn btn-primary">Logout</button>
         </div>
          <HeaderSito />
          <Mappa />

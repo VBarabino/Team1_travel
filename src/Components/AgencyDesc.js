@@ -17,8 +17,8 @@ function AgencyDesc() {
                     <li style={{listStyle:'none'}}><h3 className="agent">{datiJson.operator.name}</h3></li>
                    
                     <p className="lista1" style={{listStyle:'inside', marginBottom:20}}> Il tuo agente di viaggio</p>
-                    <li className="lista1"><i className="fas fa-phone"></i><a href="tel:095931367"> {datiJson.operator.contact.phone}</a></li>
-                    <li className="lista1"><i className="fas fa-envelope"></i><a href="mailto:info@insicilia.it"> {datiJson.operator.contact.email}</a></li>
+                    <li className="lista1"><i className="fas fa-phone"></i><a href="tel:095931367" style={{color:'#e6a200'}}> {datiJson.operator.contact.phone}</a></li>
+                    <li className="lista1"><i className="fas fa-envelope"></i><a href="mailto:info@insicilia.it" style={{color:'#e6a200'}}> {datiJson.operator.contact.email}</a></li>
                 </ul>
             </div>
         

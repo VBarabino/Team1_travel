@@ -23,9 +23,9 @@ const Mappa = () => {
     const position=[datiJson.rows[0].places[0].position.coords[0],datiJson.rows[0].places[0].position.coords[1]]
 
     const locations=[
-        {"name":"Siracusa","position":[datiJson.rows[0].places[0].position.coords[0],datiJson.rows[0].places[0].position.coords[1]]},
-        {"name":"Vendicari","position":[datiJson.rows[2].places[0].position.coords[0],datiJson.rows[2].places[0].position.coords[1]]},
-        {"name":"Catania","position":[datiJson.rows[6].places[0].position.coords[0],datiJson.rows[6].places[0].position.coords[1]]},
+        {"name":"Siracusa","position":[datiJson.rows[0].places[0].position.coords[0],datiJson.rows[0].places[0].position.coords[1]],"tappa":"1 e 3"},
+        {"name":"Vendicari","position":[datiJson.rows[2].places[0].position.coords[0],datiJson.rows[2].places[0].position.coords[1]],"tappa":"2"},
+        {"name":"Catania","position":[datiJson.rows[6].places[0].position.coords[0],datiJson.rows[6].places[0].position.coords[1]],"tappa":"4"},
 
     ]
 
@@ -84,7 +84,7 @@ const Mappa = () => {
                    {locations.map(location =>{
                       return <Marker position={location.position} icon={leafletIcon}>
                            <Popup>
-                               {location.name}
+                               {location.name} <br />  Tappa: {location.tappa}
                            </Popup>
                        </Marker>
                    })}
@@ -95,14 +95,14 @@ const Mappa = () => {
 
                 
                 
-                <h2>{datiJson.title}</h2>
+                <h2 style={{color:'#FFB400'}}>{datiJson.title}</h2>
                 <p>{datiJson.rows[0].places[0].name}&gt;{datiJson.rows[2].places[0].name}&gt;{datiJson.rows[6].places[0].name}</p>
-                <p><i className="fas fa-long-arrow-alt-right"></i> Dal {datiJson.dateFrom} al {datiJson.dateTo}</p>
+                <p><i style={{color:'#FFB400',fontSize:20}} className="fas fa-long-arrow-alt-right"></i> Dal {datiJson.dateFrom} al {datiJson.dateTo}</p>
                 
                 {/* <p><i class="fas fa-long-arrow-alt-right"></i> {b} {datiJson.partecipants[0].type} <i class="fas fa-long-arrow-alt-right"></i> {c} {datiJson.partecipants[2].type}  </p> */}
-                <p><i className="fas fa-long-arrow-alt-right"></i> {datiJson.days} Giorni - {datiJson.days -1} Notti</p>
+                <p><i style={{color:'#FFB400',fontSize:20}} className="fas fa-long-arrow-alt-right"></i> {datiJson.days} Giorni - {datiJson.days -1} Notti</p>
 
-                <p><i className="fas fa-long-arrow-alt-right"></i> {b}&nbsp;{d}<i class="fas fa-long-arrow-alt-right"></i> {c}&nbsp;{e}  </p>
+                <p><i style={{color:'#FFB400',fontSize:20}} className="fas fa-long-arrow-alt-right"></i> {b}&nbsp;{d}<i style={{color:'#FFB400',fontSize:20}} class="fas fa-long-arrow-alt-right"></i> {c}&nbsp;{e}  </p>
                 
                
              
