@@ -97,12 +97,14 @@ const Mappa = () => {
                 
                 <h2 style={{color:'#FFB400'}}>{datiJson.title}</h2>
                 <p>{datiJson.rows[0].places[0].name}&gt;{datiJson.rows[2].places[0].name}&gt;{datiJson.rows[6].places[0].name}</p>
-                <p><i style={{color:'#FFB400',fontSize:20}} className="fas fa-long-arrow-alt-right"></i> Dal {datiJson.dateFrom} al {datiJson.dateTo}</p>
+                <p style={{fontSize:25,color:"#9BA7B7"}}><i style={{color:'#FFB400',fontSize:20}} className="fas fa-long-arrow-alt-right"></i> Dal {datiJson.dateFrom} al {datiJson.dateTo}</p>
                 
                 {/* <p><i class="fas fa-long-arrow-alt-right"></i> {b} {datiJson.partecipants[0].type} <i class="fas fa-long-arrow-alt-right"></i> {c} {datiJson.partecipants[2].type}  </p> */}
-                <p><i style={{color:'#FFB400',fontSize:20}} className="fas fa-long-arrow-alt-right"></i> {datiJson.days} Giorni - {datiJson.days -1} Notti</p>
+                <p style={{fontSize:25,color:"#9BA7B7"}}><i style={{color:'#FFB400',fontSize:20}} className="fas fa-long-arrow-alt-right"></i> {b}&nbsp;{d}&nbsp;<i style={{color:'#FFB400',fontSize:20}} class="fas fa-long-arrow-alt-right"></i> {c}&nbsp;{e}  </p>
+                
+                <p style={{fontSize:25,color:"#9BA7B7"}}><i style={{color:'#FFB400',fontSize:20}} className="fas fa-long-arrow-alt-right"></i> {datiJson.days} Giorni - {datiJson.days -1} Notti</p>
 
-                <p><i style={{color:'#FFB400',fontSize:20}} className="fas fa-long-arrow-alt-right"></i> {b}&nbsp;{d}<i style={{color:'#FFB400',fontSize:20}} class="fas fa-long-arrow-alt-right"></i> {c}&nbsp;{e}  </p>
+                
                 
                
              

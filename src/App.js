@@ -3,7 +3,8 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Redirect
+    Redirect,
+    Link
   } from "react-router-dom";
 import DataContextProvider from './Context/DataContext';
 import Cookies from 'js-cookie'
@@ -84,12 +85,15 @@ const Dashboard = () => {
     )
 }
 
+
+
 const Routes = () =>{
     const Auth = React.useContext(AuthApi)
     return (
         <Switch>
             <ProtectedLogin path="/Login" component={Login} auth={Auth.auth}/>
             <ProtectedRoute path="/Dashboard" auth={Auth.auth} component={Dashboard}/>
+            <Route path="/"><Redirect to="/login" /></Route>
         </Switch>
     )
 }
@@ -111,14 +115,20 @@ const ProtectedRoute =({auth, component: Component, ...rest}) =>{
 
 const ProtectedLogin =({auth, component: Component, ...rest}) =>{
     return (
+        <>
         <Route 
             {...rest}
             render ={()=> !auth? ( 
-            <Component/>
+                <>
+                    
+                    <Component/>
+                 </>
             ):(
                 <Redirect to ="/dashboard"/>
             )}
-        />
+        /> 
+        
+        </>
 
         
     )

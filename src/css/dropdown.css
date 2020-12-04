@@ -1,0 +1,9 @@
+.dots {
+    background-repeat: repeat-y;
+    height: 100%;
+    background-size: 8px;
+    width: 100%;
+    background-position: 50%;
+    background-image: url(http://51.77.82.133:86/images/Ellipse.png);
+    height:100%
+}
