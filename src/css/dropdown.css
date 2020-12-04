@@ -7,3 +7,44 @@
     background-image: url(http://51.77.82.133:86/images/Ellipse.png);
     height:100%
 }
+
+.dropdown-header-title2 { 
+    font-size:30px;
+    margin:0;
+}
+
+.dropdown-wrapper.card {
+padding:.75rem 1.25rem!important;
+}
+
+.dropdown-header {
+    padding:0;
+    margin-bottom:0px;
+}
+.contday {
+    border-top: 1px solid rgba(0,0,0,.125); 
+    margin-top: 0.7em; 
+    padding-top: 1.5em; 
+}
+.contday h3 {
+    color: #FFB400;
+    font-size: 28px;
+    line-height: 33px;
+    font-weight: 700;
+}
+.data {
+    color:#9BA7AF;
+    font-weight: lighter;
+    font-size:24px;
+}
+.desday {
+    margin-top:15px;
+}
+
+.typology-transfer {
+    background-color: rgb(255, 180, 0);
+    font-size:40px;
+    width:100px;
+    height:100px;
+    text-align: center;
+}

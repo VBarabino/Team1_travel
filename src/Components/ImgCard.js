@@ -5,7 +5,8 @@ const ImgCard = ({ img }) => {
 
     return (
         img.map((el1,i)=>{
-            return(<img src={el1.image} style={{width:200}}/>)
+            return(
+            <img src={el1.image} style={{width:'100%'}}/>)
           })  
     )
 } 
