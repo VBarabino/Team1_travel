@@ -2,6 +2,7 @@ import React,{ useState } from 'react'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import Galleria from './Galleria'
+import { set } from 'js-cookie'
 
 const ImgCardGallery = ({ img2 }) => {
     const [curr,setCurr] = useState(undefined)
@@ -20,6 +21,7 @@ const ImgCardGallery = ({ img2 }) => {
             return(
                 <>
             <img role="button" onClick={e=>handleShow(e,el1.id)} src={el1.image} style={{width:200}}/>
+        
 
             {el1.id == curr ? 
             
@@ -34,21 +36,17 @@ const ImgCardGallery = ({ img2 }) => {
 
                      <div>
                          <img src={el1.image} style={{width:"100%"}}/>
+                         <Galleria img={img2}/>
+                 
 
-                         <Galleria img={el1.image} />  
+                         
 
                          
 
 
                          
                      </div>
-
-                 
                      </>
-                   
-                   
-                    
-                       
                     </>
                 </Modal.Body>
                 <Modal.Footer>

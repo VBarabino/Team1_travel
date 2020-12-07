@@ -293,7 +293,18 @@ h2.titlemap {
 .uppercase {
   text-transform:uppercase;
 }
-
+.text-grey {
+  color: #9BA7AF;
+  font-weight: bold;
+}
+.text-yellow {
+  color: #FFB400;
+  font-weight:bold;
+  font-size:1.5em;
+}
+.ws {
+  white-space: pre-wrap;
+}
 
 @media only screen and (max-width : 991px) {
   .pdl {padding-left:15px; margin-top:15px;}

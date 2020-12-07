@@ -23,7 +23,7 @@ const DropdownBlue = ({ title , item }) => {
 
             </div>
             {open && (
-                <p className="dropdown-list">
+                <p className="dropdown-list small-text">
                     {item}
                     
 

@@ -22,32 +22,42 @@ const DropdownTariffa = ({ title , totalprice ,  partecipanti , included , notin
             </div>
             {open && (
                 <div className="dropdown-list">
-                    <div className="row">
-                        <div className="col-md-4">{partecipanti[0].type}</div>
-                        <div className="col-md-8 text-right">{partecipanti[0].price}€</div>
+                    <div className="row mt-3">
+                        <div className="col-md-4 uppercase">{partecipanti[0].type}</div>
+                        <div className="col-md-8 text-right text-grey">{partecipanti[0].price}€</div>
                     </div>
                     <div className="row">
-                        <div className="col-md-4">{partecipanti[1].type}</div>
-                        <div className="col-md-8 text-right">{partecipanti[1].price}€</div>
+                        <div className="col-md-4 uppercase">{partecipanti[1].type}</div>
+                        <div className="col-md-8 text-right text-grey">{partecipanti[1].price}€</div>
                     </div>
                     <div className="row">
-                        <div className="col-md-4">{partecipanti[2].type}</div>
-                        <div className="col-md-8 text-right">{partecipanti[2].price}€</div>
+                        <div className="col-md-4 uppercase">{partecipanti[2].type}</div>
+                        <div className="col-md-8 text-right text-grey">{partecipanti[2].price}€</div>
                     </div>
                     <div className="row">
-                        <div className="col-md-4">{partecipanti[3].type}</div>
-                        <div className="col-md-8 text-right">{partecipanti[3].price}€</div>
+                        <div className="col-md-4 uppercase">{partecipanti[3].type}</div>
+                        <div className="col-md-8 text-right text-grey">{partecipanti[3].price}€</div>
                     </div>
                     
                    
                     <hr />
-                    {totalprice}
+                    <div className="row">
+                        <div className="col-md-12 text-right">
+                            <strong>TOTALE</strong><br />
+                            {/* funzione per mettere totale giusto */}
+                            <span className="text-yellow">{totalprice}</span> 
+                        </div>
+                    </div>
                     
-                    <h3>COSA COMPRENDE IL PREZZO</h3>
-                    <p>{included}</p>
+                    <div className="row mt-3">
+                        <div className="col-md-12">
+                            <h3 className="text-yellow">COSA COMPRENDE IL PREZZO</h3>
+                            <p className="small-text ws">{included}</p>
 
-                    <h3>COSA NON COMPRENDE IL PREZZO</h3>
-                    <p>{notincluded}</p>
+                            <h3 className="text-yellow">COSA NON COMPRENDE IL PREZZO</h3>
+                            <p className="small-text ws">{notincluded}</p>
+                        </div>
+                    </div>
                 </div>
             )}
             
