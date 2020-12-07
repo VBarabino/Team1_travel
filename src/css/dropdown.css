@@ -43,8 +43,13 @@ padding:.75rem 1.25rem!important;
 
 .typology-transfer {
     background-color: rgb(255, 180, 0);
-    font-size:40px;
     width:100px;
     height:100px;
     text-align: center;
+}
+.transfer-center {
+    line-height: 100px;
+    text-align: center;
+    font-size: 40px;
+    display: block;
 }

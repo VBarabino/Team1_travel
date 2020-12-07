@@ -88,7 +88,7 @@ const DropdownFather = () => {
 
             <li><Dropdownblue title={datiJson.documentsPayment.name} item={datiJson.documentsPayment.description}/></li>
 
-            <li><Dropdownblue title={datiJson.documentsCarRental.name} item={datiJson.documentsCarRental.description}/></li>
+            <li className="rentdesc"><Dropdownblue title={datiJson.documentsCarRental.name} item={datiJson.documentsCarRental.description}/></li> 
           
 
             </ul>

@@ -95,8 +95,8 @@ const Mappa = () => {
 
                 
                 
-                <h2 style={{color:'#FFB400'}}>{datiJson.title}</h2>
-                <p>{datiJson.rows[0].places[0].name}&gt;{datiJson.rows[2].places[0].name}&gt;{datiJson.rows[6].places[0].name}</p>
+                <h2 className="titlemap">{datiJson.title}</h2>
+                <p className="small-text uppercase">{datiJson.rows[0].places[0].name}&gt;{datiJson.rows[2].places[0].name}&gt;{datiJson.rows[6].places[0].name}</p>
                 <p style={{fontSize:25,color:"#9BA7B7"}}><i style={{color:'#FFB400',fontSize:20}} className="fas fa-long-arrow-alt-right"></i> Dal {datiJson.dateFrom} al {datiJson.dateTo}</p>
                 
                 {/* <p><i class="fas fa-long-arrow-alt-right"></i> {b} {datiJson.partecipants[0].type} <i class="fas fa-long-arrow-alt-right"></i> {c} {datiJson.partecipants[2].type}  </p> */}

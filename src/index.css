@@ -273,10 +273,27 @@ footer{
 
 .dropdown-header-title2{
   text-transform: uppercase;
-  color: blue;
+  color: #0063C9;
   font-size: 20px;
   font-weight: 600;
 }
+.rentdesc {
+  white-space: pre-wrap;
+}
+h2.titlemap {
+  color:#FFB400; 
+  text-transform:uppercase;
+  margin-top:1em;
+  font-weight:bold;
+}
+.small-text {
+  font-size: 14px;
+  line-height: 16px;
+}
+.uppercase {
+  text-transform:uppercase;
+}
+
 
 @media only screen and (max-width : 991px) {
   .pdl {padding-left:15px; margin-top:15px;}

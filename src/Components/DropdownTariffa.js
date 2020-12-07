@@ -21,13 +21,25 @@ const DropdownTariffa = ({ title , totalprice ,  partecipanti , included , notin
 
             </div>
             {open && (
-                <p className="dropdown-list">
-                    <ul>
-                    <li>{partecipanti[0].type} {partecipanti[0].price}€</li>
-                    <li>{partecipanti[1].type} {partecipanti[1].price}€</li>
-                    <li>{partecipanti[2].type} {partecipanti[2].price}€</li>
-                    <li>{partecipanti[3].type} {partecipanti[3].price}€</li>
-                    </ul>
+                <div className="dropdown-list">
+                    <div className="row">
+                        <div className="col-md-4">{partecipanti[0].type}</div>
+                        <div className="col-md-8 text-right">{partecipanti[0].price}€</div>
+                    </div>
+                    <div className="row">
+                        <div className="col-md-4">{partecipanti[1].type}</div>
+                        <div className="col-md-8 text-right">{partecipanti[1].price}€</div>
+                    </div>
+                    <div className="row">
+                        <div className="col-md-4">{partecipanti[2].type}</div>
+                        <div className="col-md-8 text-right">{partecipanti[2].price}€</div>
+                    </div>
+                    <div className="row">
+                        <div className="col-md-4">{partecipanti[3].type}</div>
+                        <div className="col-md-8 text-right">{partecipanti[3].price}€</div>
+                    </div>
+                    
+                   
                     <hr />
                     {totalprice}
                     
@@ -36,8 +48,7 @@ const DropdownTariffa = ({ title , totalprice ,  partecipanti , included , notin
 
                     <h3>COSA NON COMPRENDE IL PREZZO</h3>
                     <p>{notincluded}</p>
-
-                </p>
+                </div>
             )}
             
         </div>
